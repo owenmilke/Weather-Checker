@@ -1,0 +1,78 @@
+<!-- Owen Milke -->
+<!-- CS2300B -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Page title updates dynamically depending on what page the user is on -->
+        <title>{% block title %} {% endblock %} | Weather Checker</title>
+        <!-- Style for the webpages -->
+        <style>
+            body {
+                font-family: monospace;
+                padding: 14px 16px;
+                margin: 5px;
+            }
+            .title {
+                margin: 10px;
+            }
+            .city {
+                padding: 15px;
+                margin: 10px;
+                background-color: #f3f3f3;
+            }
+            .topnav {
+                background-color: #1d1d1d;
+                overflow: hidden;
+            }
+            .topnav a {
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                line-height: 25px;
+                border-radius: 4px;
+                text-decoration: none;
+                font-size: 20px;
+                overflow: hidden;
+            }
+            .topnav a:hover {
+                background-color: #d4cbce;
+                color: #000000;
+            }
+            .header{
+                display: inline-block;
+                vertical-align: middle;
+                overflow: hidden;
+                color: #f2f2f2;
+                text-align: center;
+                text-decoration: none;
+                font-size: 30px;
+                padding: 14px 16px;
+                line-height: 25px;
+                border-radius: 4px;
+            }
+            .alert {
+                padding: 20px;
+                color: #970020;
+                background-color: #ffd5de;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="topnav">
+            <h1 class="header">Weather Checker</h1>
+            <!-- Python code that determines which Flask method to run -->
+            <a href="{{ url_for('index') }}">My Locations</a>
+            <a href="{{ url_for('add') }}">Add Location</a>
+        </nav>
+        <hr>
+        <div>
+            <!-- Displays any error alerts if they occur using Python code -->
+            {% for message in get_flashed_messages() %}
+                <div class="alert">{{ message }}</div>
+            {% endfor %}
+            {% block content %} {% endblock %}
+        </div>
+    </body>
+</html>

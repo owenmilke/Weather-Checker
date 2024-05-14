@@ -1,0 +1,21 @@
+<!-- Owen Milke -->
+<!-- CS2300B -->
+
+<!-- Using Python code the base html file is modified for each page -->
+{% extends 'base.html' %}
+
+<!-- Displays all weather data for each validated city/location the user entered -->
+{% block content %}
+    <h1 class="title">{% block title %} Weather In Your Locations {% endblock %}</h1>
+    {% for message in weather %}
+        <div class='city'>
+            <h2>{{ message['location'] }}, {{ message['country'] }}</h2>
+            <p>Current Temperature: {{ message['temp'] }}°F</p>
+            <p>Feels Like: {{ message['feels_like'] }}°F</p>
+            <p>High: {{ message['max_temp'] }}°F | Low: {{ message['min_temp'] }}°F</p>
+            <p>Humidity: {{ message['humidity'] }}%</p>
+            <p>Wind: {{ message['wind'] }} MPH</p>
+            <p>Description: {{ message['description'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

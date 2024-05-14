@@ -1,0 +1,17 @@
+<!-- Owen Milke -->
+<!-- CS2300B -->
+
+<!-- Using Python code the base html file is modified for each page -->
+{% extends 'base.html' %}
+
+<!-- Using a combination of an html form and Pythond code input entered by the user is sent to the Flask app where it is verified -->
+{% block content %}
+    <h1 class="title">{% block title %} Add a New Location{% endblock %}</h1>
+    <form method="POST" class="title">
+        <label for="city">City must be in the form "City Name", or "City Name, State Abreviation" (ex. "Burlington" or "Burlington, VT")</label>
+        <br><br>
+        <input type="text" name="city" placeholder="City Name" value="{{ request.form['city'] }}"></input>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
