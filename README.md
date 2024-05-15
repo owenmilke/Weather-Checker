@@ -1,7 +1,17 @@
 <h1>Weather Checker - Owen Milke</h1>
 
 <h3>Required Insallations:</h3>
-The required installations/imports for this program are Flask and requests. All instalations are able to be done using pip3 in the terminal.
+The required installations/imports for this program are Flask and requests. All instalations are able to be done using pip in the terminal.
+
+```bash
+pip install Flask
+pip install requests
+```
+OR
+```bash
+pip3 install Flask
+pip3 install requests
+```
 
 <h3>Program Summary:</h3>
 <h4>Program Description:</h4>
